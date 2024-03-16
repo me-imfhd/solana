@@ -1,0 +1,4 @@
+.local_keys
+node_modules
+.env
+.env.local
