@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "demo": "concurrently --kill-others \"tsc -w\" \"tsc-alias -w\"",
-    "dev": "nodemon --noEmit --exec \"node -r esbuild-register ./scripts/1.simple-transactions.ts\" -e .ts"
+    "dev": "nodemon --noEmit --exec \"node -r esbuild-register ./index.ts\" -e .ts"
   },
   "dependencies": {
     "@metaplex-foundation/js": "^0.19.3",

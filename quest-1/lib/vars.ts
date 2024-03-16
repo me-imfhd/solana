@@ -28,5 +28,5 @@ export const connection = new Connection(CLUSTER_URL, "single");
 
 // define an address to also transfer lamports too
 export const STATIC_PUBLICKEY = new PublicKey(
-  "nickb1dAk4hKpHVPZenpzqVtw2F8RHnCq27QcfiReXD"
+  "8arb6yXMiQKrsrYqTRubaHrZWXyfDsB8wyeDUh2iagK3"
 );
