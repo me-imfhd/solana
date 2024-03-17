@@ -5,6 +5,7 @@ import { create_token_with_metadata } from "./scripts/3.create-token-with-metada
 import { mint_token } from "./scripts/4.mint-token";
 import { update_metadata } from "./scripts/5.update-metadata";
 import { create_nft } from "./scripts/6.create-nft";
+import { update_nft } from "./scripts/7.update-nft";
 
 (async () => {
   // 1. Simple transaction -> create account
@@ -19,5 +20,7 @@ import { create_nft } from "./scripts/6.create-nft";
   // const res = await update_metadata();
   // 6. Create NFT -> create nft with metaplex
   // const res = await create_nft();
+  // 7. Update NFT -> get nft by address use it in update nft and update invalid image and other metadata
+  // const res = await update_nft();
   // console.log(res);
 })();
