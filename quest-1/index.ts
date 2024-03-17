@@ -4,6 +4,7 @@ import { create_acc_and_send_sol_to_multiple_wallet } from "./scripts/2.complex-
 import { create_token_with_metadata } from "./scripts/3.create-token-with-metadata";
 import { mint_token } from "./scripts/4.mint-token";
 import { update_metadata } from "./scripts/5.update-metadata";
+import { create_nft } from "./scripts/6.create-nft";
 
 (async () => {
   // 1. Simple transaction -> create account
@@ -16,5 +17,7 @@ import { update_metadata } from "./scripts/5.update-metadata";
   // const res = await mint_token();
   // 5. Update Metadata -> get mint account, and run create or update metadata instruction
   // const res = await update_metadata();
+  // 6. Create NFT -> create nft with metaplex
+  // const res = await create_nft();
   // console.log(res);
 })();
