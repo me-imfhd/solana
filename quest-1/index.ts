@@ -6,6 +6,7 @@ import { mint_token } from "./scripts/4.mint-token";
 import { update_metadata } from "./scripts/5.update-metadata";
 import { create_nft } from "./scripts/6.create-nft";
 import { update_nft } from "./scripts/7.update-nft";
+import { dmc_nft_collection } from "./scripts/8.dmc-nft-collection";
 
 (async () => {
   // 1. Simple transaction -> create account
@@ -22,5 +23,7 @@ import { update_nft } from "./scripts/7.update-nft";
   // const res = await create_nft();
   // 7. Update NFT -> get nft by address use it in update nft and update invalid image and other metadata
   // const res = await update_nft();
+  // 8. DMC NFT Collection -> create collection mint, use candy manchine for management, add nfts/items to candy machine, mint nfts
+  // const res = await dmc_nft_collection()
   // console.log(res);
 })();
