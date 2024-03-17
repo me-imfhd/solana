@@ -37,7 +37,7 @@ export async function dmc_nft_collection() {
   // const res = await mintNft(); // mint nfts that were added by addItems and run collectionSize number or times
 }
 async function mintNft() {
-  const candyMachine = await metaplex.candyMachines().findByAddress({
+  let candyMachine = await metaplex.candyMachines().findByAddress({
     address: new PublicKey(CANDY_MACHINE_ID),
   });
   let { nft, response } = await metaplex.candyMachines().mint(
@@ -48,6 +48,8 @@ async function mintNft() {
     { commitment: "finalized" }
   );
 
+  candyMachine = await metaplex.candyMachines().refresh(candyMachine);
+
   console.log(`✅ - Minted NFT: ${nft.address.toString()}`);
   console.log(
     `     https://explorer.solana.com/address/${nft.address.toString()}?cluster=devnet`
@@ -57,7 +59,7 @@ async function mintNft() {
   );
 }
 async function addItems() {
-  const candyMachine = await metaplex
+  let candyMachine = await metaplex
     .candyMachines()
     .findByAddress({ address: new PublicKey(CANDY_MACHINE_ID) });
   const items = [];
@@ -83,6 +85,7 @@ async function addItems() {
     },
     { commitment: "finalized" }
   );
+  candyMachine = await metaplex.candyMachines().refresh(candyMachine);
 
   console.log(`✅ - Items added to Candy Machine: ${CANDY_MACHINE_ID}`);
   console.log(
@@ -90,7 +93,7 @@ async function addItems() {
   );
 }
 async function updateCandyMachine() {
-  const candyMachine = await metaplex
+  let candyMachine = await metaplex
     .candyMachines()
     .findByAddress({ address: new PublicKey(CANDY_MACHINE_ID) });
 
@@ -104,6 +107,8 @@ async function updateCandyMachine() {
       },
     },
   });
+
+  candyMachine = await metaplex.candyMachines().refresh(candyMachine);
 
   console.log(`✅ - Updated Candy Machine: ${CANDY_MACHINE_ID}`);
   console.log(
@@ -156,7 +161,7 @@ async function createCollectionNft(
     uri,
     isMutable: true,
     symbol: metadata.symbol,
-    sellerFeeBasisPoints: 1000,
+    sellerFeeBasisPoints: 0,
     isCollection: true,
     updateAuthority: payer,
   });
