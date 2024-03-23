@@ -1,0 +1,18 @@
+[toolchain]
+
+[features]
+seeds = false
+skip-lint = false
+
+[programs.devnet]
+collection = "HHuwFWf4EZsjEsp2CLBaGs3WReCtVb79pjZjLgP91XQC"
+
+[registry]
+url = "https://api.devnet.solana.com"
+
+[provider]
+cluster = "devnet"
+wallet = "/home/meimfhd/.config/solana/id.json"
+
+[scripts]
+test = "pnpm ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
